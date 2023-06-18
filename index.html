@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #000000;
+        }
+        
+        h1 {
+            text-align: center;
+            color: aliceblue;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #fd001d;
+            color: #000000;
+            border: none;
+            cursor: pointer;
+        }
+        
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Factorial</h1>
+    <div class="container">
+        <label for="number">Enter a number:</label>
+        <input type="number" id="number" placeholder="Enter a number">
+        <button onclick="calculateFactorial()">Find</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        function calculateFactorial() {
+            var numberInput = document.getElementById("number");
+            var resultDiv = document.getElementById("result");
+            
+            
+            var number = parseInt(numberInput.value);
+            
+            
+            if (isNaN(number)) {
+                resultDiv.innerHTML = "Invalid input. Please enter a number.";
+                return;
+            }
+            
+            
+            var factorial = 1;
+            for (var i = 2; i <= number; i++) {
+                factorial *= i;
+            }
+            
+            
+            resultDiv.innerHTML = "Factorial of " + number + " is " + factorial;
+        }
+    </script>
+</body>
+</html>
